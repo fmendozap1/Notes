@@ -1,0 +1,157 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- Barra lateral -->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="createnote()">
+                            <img src="../../assets/images/agregar-contacto.png" alt="Create Note" style="width: 24px;">
+                            Create Note
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="editnote()">
+                            <img src="../../assets/images/actualizado.png" alt="Edit Note" style="width: 24px;">
+                            Edit Note
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="deletenote()">
+                            <img src="../../assets/images/borrar.png" alt="Delete Note" style="width: 24px;">
+                            Delete Note
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="abrirlistar()">
+                            <img src="../../assets/images/lista-de-verificacion.png" alt="List of Notes" style="width: 24px;">
+                            List of Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="abrirlistararchived()">
+                            <img src="../../assets/images/archivador.png" alt="List of Notes Archive" style="width: 24px;">
+                            List of Notes Archive
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="abrirlistarunarchived()">
+                            <img src="../../assets/images/desarchivar.png" alt="List of Notes Unarchive" style="width: 24px;">
+                            List of Notes Unarchive
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        
+            <div class="container text-center">
+               
+                <div class="row">
+                    <h1>Notes</h1>
+                </div>
+
+                <div class="row">
+                    <div class="card text-bg-secondary rounded" *ngFor="let information of notes;" style="width: 18rem;border: 10px solid #ffffff;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{information.titleNote}}</h5>
+                          <p class="card-text">{{information.contentNote}}</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-warning" (click)="showmodal(information)">Edit</button>
+                        </div>
+                    </div>
+        
+                </div>
+
+               
+
+            </div>
+        </main>
+    </div>
+</div>
+
+
+<div class="container text-center">
+  
+            <div *ngIf="selectednote != undefined">
+
+                <div class="modal" tabindex="-1" *ngIf="selectednote">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                          <h5 class="modal-title">Edit Note</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closemodal()"></button>
+                        </div>
+                       
+                        <form autocomplete="off" (ngSubmit)="actualizarnota(z)" #z="ngForm">
+                                <div class="modal-body">
+                                        
+                                        
+                                                    <!--id-->
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <label for="id" class="form-label">Id:  </label>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <input type="text" class="form-control mb-3" name="id" [value]="selectednote.idNote" ngModel>
+                                                        </div>
+                                                    </div>
+                    
+                                                    <!--title-->
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <label for="title" class="form-label">Title </label>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <input type="text" class="form-control mb-3" name="title"  [value]="selectednote.titleNote" ngModel>
+                                                        </div>
+                                                    </div>
+                                    
+                                                    <!--Campo content-->
+                                                    <div class="row">
+                                                    
+                                                        <div class="col-4">
+                                                            <label for="content" class="form-label">Content </label>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <textarea rows="10" type="text" class="form-control mb-3" name="content" [value]="selectednote.contentNote" ngModel></textarea>
+                                                        </div>
+                                                    </div>
+                    
+                                                    <!--Campo content-->
+                                                    <div class="row">
+                                                    
+                                                        <div class="col-4">
+                                                            <label for="archive" class="form-label">Status </label>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <select class="form-control mb-3" name="archive" [(ngModel)]="selectednote.archiveNote">
+                                                                <option [value]="true" [selected]="selectednote.archiveNote === true">Archive</option>
+                                                                <option [value]="false" [selected]="selectednote.archiveNote === false">Unarchive</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                
+                                </div>
+
+                                <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closemodal()">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+
+                        </form>
+
+                   
+
+                      
+                    </div>
+                  </div>
+
+            </div>
+
+           
+</div>

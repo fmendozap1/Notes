@@ -1,0 +1,116 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- Barra lateral -->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="createnote()">
+                            <img src="../../assets/images/agregar-contacto.png" alt="Create Note" style="width: 24px;">
+                            Create Note
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="editnote()">
+                            <img src="../../assets/images/actualizado.png" alt="Edit Note" style="width: 24px;">
+                            Edit Note
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="deletenote()">
+                            <img src="../../assets/images/borrar.png" alt="Delete Note" style="width: 24px;">
+                            Delete Note
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="abrirlistar()">
+                            <img src="../../assets/images/lista-de-verificacion.png" alt="List of Notes" style="width: 24px;">
+                            List of Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="abrirlistararchived()">
+                            <img src="../../assets/images/archivador.png" alt="List of Notes Archive" style="width: 24px;">
+                            List of Notes Archive
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="abrirlistarunarchived()">
+                            <img src="../../assets/images/desarchivar.png" alt="List of Notes Unarchive" style="width: 24px;">
+                            List of Notes Unarchive
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        
+            <div class="container text-center">
+               
+                <div class="container text-center">
+                   
+                    <div class="container text-center">
+                       
+
+
+                        <div class="container text-center">
+                            <div class="row">
+                                <h1>List of Notes Archived</h1>
+                            </div>
+                        
+                            <div class="row">
+                        
+                                    <div class="card text-bg-secondary" *ngFor="let information of notes;" style="width: 18rem;border: 10px solid #ffffff;">
+                                        <div class="card-body">
+                                          <h5 class="card-title">{{information.titleNote}}</h5>
+                                          <p class="card-text">{{information.contentNote}}</p>
+                                        </div>
+                                        <div class="card-footer bg-transparent">created in {{information.createdAt | date:'shortDate'}}</div>
+                                    </div>
+                        
+                            </div>
+                        
+                        </div>
+                        
+
+                    
+                    </div>
+                
+                
+                </div>
+
+
+            </div>
+        </main>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

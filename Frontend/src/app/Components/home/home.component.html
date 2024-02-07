@@ -1,0 +1,144 @@
+<div class="container-fluid">
+  <div class="row">
+      <!-- Barra lateral -->
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+              <ul class="nav flex-column">
+                  <li class="nav-item">
+                      <a class="nav-link" (click)="createnote()">
+                          <img src="../../assets/images/agregar-contacto.png" alt="Create Note" style="width: 24px;">
+                          Create Note
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" (click)="editnote()">
+                          <img src="../../assets/images/actualizado.png" alt="Edit Note" style="width: 24px;">
+                          Edit Note
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" (click)="deletenote()">
+                          <img src="../../assets/images/borrar.png" alt="Delete Note" style="width: 24px;">
+                          Delete Note
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" (click)="abrirlistar()">
+                          <img src="../../assets/images/lista-de-verificacion.png" alt="List of Notes" style="width: 24px;">
+                          List of Notes
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" (click)="abrirlistararchived()">
+                          <img src="../../assets/images/archivador.png" alt="List of Notes Archive" style="width: 24px;">
+                          List of Notes Archive
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" (click)="abrirlistarunarchived()">
+                          <img src="../../assets/images/desarchivar.png" alt="List of Notes Unarchive" style="width: 24px;">
+                          List of Notes Unarchive
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+
+    
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <!-- contenido principal -->
+          <div class="container text-center">
+             
+            <div class="container text-center">
+    
+              <div class="row">
+          
+                <div class="col">
+                  <div class="card" style="width: 18rem; border: 10px solid #ffffff; align-items: center;">
+                      <img src="../../assets/images/agregar-contacto.png" class="card-img-top" alt="..." style="width: 100px;">
+                      <div class="card-body">
+                        <h5 class="card-title">Create Note</h5>
+                        <p class="card-text">In this space you can create notes.</p>
+                        <button (click)="createnote()" class="btn btn-primary">Enter</button>
+                      </div>
+                    </div>
+                </div>
+          
+                <div class="col">
+                  <div class="card" style="width: 18rem; border: 10px solid #ffffff; align-items: center;">
+                      <img src="../../assets/images/actualizado.png" class="card-img-top" style="width: 100px;">
+                      <div class="card-body">
+                        <h5 class="card-title">Edit Note</h5>
+                        <p class="card-text">In this space you can Edit your notes.</p>
+                        <button (click)="editnote()" class="btn btn-primary">Enter</button>
+                      </div>
+                    </div>
+                </div>
+          
+                <div class="col">
+                  <div class="card" style="width: 18rem; border: 10px solid #ffffff; align-items: center;">
+                      <img src="../../assets/images/borrar.png" class="card-img-top" alt="..." style="width: 100px;">
+                      <div class="card-body">
+                        <h5 class="card-title">Delete Note</h5>
+                        <p class="card-text">In this space you can Delete your notes.</p>
+                        <button (click)="deletenote()" class="btn btn-primary">Enter</button>
+                      </div>
+                    </div>
+                </div>
+                
+              </div>
+          
+          
+              <div class="row">
+          
+                  <div class="col">
+                    <div class="card" style="width: 18rem; border: 10px solid #ffffff; align-items: center;">
+                        <img src="../../assets/images/lista-de-verificacion.png" class="card-img-top" alt="..." style="width: 100px;">
+                        <div class="card-body">
+                          <h5 class="card-title">List of Notes</h5>
+                          <p class="card-text">In this space you can see all the notes created.</p>
+                          <button (click)="abrirlistar()" class="btn btn-primary">Enter</button>
+                        </div>
+                      </div>
+                  </div>
+            
+                  <div class="col">
+                    <div class="card" style="width: 18rem; border: 10px solid #ffffff; align-items: center;">
+                        <img src="../../assets/images/archivador.png" class="card-img-top" alt="..." style="width: 100px;">
+                        <div class="card-body">
+                          <h5 class="card-title">List of Notes Archive</h5>
+                          <p class="card-text">In this space you can see the archived notes.</p>
+                          <button (click)="abrirlistararchived()" class="btn btn-primary">Enter</button>
+                        </div>
+                      </div>
+                  </div>
+            
+                  <div class="col">
+                    <div class="card" style="width: 18rem; border: 10px solid #ffffff; align-items: center;">
+                        <img src="../../assets/images/desarchivar.png" class="card-img-top" alt="..." style="width: 100px;">
+                        <div class="card-body">
+                          <h5 class="card-title"> List of Notes Unarchive</h5>
+                          <p class="card-text">In this space you can see the unarchived notes.</p>
+                          <button (click)="abrirlistarunarchived()" class="btn btn-primary">Enter</button>
+                        </div>
+                      </div>
+                  </div>
+                  
+                </div>
+            
+          
+            </div>
+
+
+
+
+
+          </div>
+      </main>
+  </div>
+</div>
+
+
+
+
+

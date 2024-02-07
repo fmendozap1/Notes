@@ -1,0 +1,131 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- Barra lateral -->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="createnote()">
+                            <img src="../../assets/images/agregar-contacto.png" alt="Create Note" style="width: 24px;">
+                            Create Note
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="editnote()">
+                            <img src="../../assets/images/actualizado.png" alt="Edit Note" style="width: 24px;">
+                            Edit Note
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="deletenote()">
+                            <img src="../../assets/images/borrar.png" alt="Delete Note" style="width: 24px;">
+                            Delete Note
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="abrirlistar()">
+                            <img src="../../assets/images/lista-de-verificacion.png" alt="List of Notes" style="width: 24px;">
+                            List of Notes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="abrirlistararchived()">
+                            <img src="../../assets/images/archivador.png" alt="List of Notes Archive" style="width: 24px;">
+                            List of Notes Archive
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="abrirlistarunarchived()">
+                            <img src="../../assets/images/desarchivar.png" alt="List of Notes Unarchive" style="width: 24px;">
+                            List of Notes Unarchive
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        
+            <div class="container text-center">
+               
+ <!-- aqui debo pegar la informacion -->
+<div class="row text-center">
+           
+    <div class="col-12">
+        <h1>Record of Notes</h1>
+    </div>
+        
+</div>
+
+<div class="container-fluid">
+
+    <div class="card mb-3 mx-auto" style="max-width: 800px;min-height: 450px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="../../../assets/images/lapiz.png" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              
+              <form autocomplete="off" (ngSubmit)="sendnotes(z)" #z="ngForm">
+        
+                <!--title-->
+                <div class="row">
+                        <div class="col-4">
+                            <label for="title" class="form-label">Title </label>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control mb-3" name="title" ngModel>
+                        </div>
+                </div>
+        
+                <!--Campo content-->
+                <div class="row">
+                   
+                    <div class="col-4">
+                        <label for="content" class="form-label">Content </label>
+                    </div>
+                    <div class="col-6">
+                        <textarea rows="10" type="text" class="form-control mb-3" name="content" ngModel></textarea>
+                    </div>
+                </div>
+
+                <input type="hidden" name="archive" value="false" ngModel>
+
+                <div class="row">
+                  
+                    <div class="col-6">
+        
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                 
+                </div>
+        
+        
+            </form>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+
+            </div>
+        </main>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
